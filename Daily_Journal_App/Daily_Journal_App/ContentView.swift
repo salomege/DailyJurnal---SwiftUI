@@ -16,11 +16,12 @@ struct ContentView: View {
     
     var body: some View {
         NavigationView {
+            VStack {
             Form {
                 TextField("Enter Title", text: $title)
                 TextField("Enter News", text: $news)
                 DatePicker("Enter Date", selection: $date, displayedComponents: [.date])
-                Button(action: saveButtonPressed) 
+                Button(action: saveButtonPressed)
                 {
                     Text("Add News")
                 }
@@ -43,6 +44,7 @@ struct ContentView: View {
             }
             .id(UUID())
             .listStyle(PlainListStyle())
+        }
         }
     }
     
